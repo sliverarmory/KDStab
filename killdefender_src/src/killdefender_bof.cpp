@@ -385,12 +385,12 @@ int go(char* args, int len)
             BeaconPrintf(CALLBACK_OUTPUT, "[*] %s's token is Low!\n", targetname);
         else if (dwIntegrityLevel == SECURITY_MANDATORY_MEDIUM_RID)
             BeaconPrintf(CALLBACK_OUTPUT, "[*] %s's token is Medium!\n", targetname);
-        else if (dwIntegrityLevel == SECURITY_MANDATORY_MEDIUM_PLUS_RID)
-            BeaconPrintf(CALLBACK_OUTPUT, "[*] %s's token is Medium_Plus!\n", targetname);
         else if (dwIntegrityLevel == SECURITY_MANDATORY_HIGH_RID)
             BeaconPrintf(CALLBACK_OUTPUT, "[*] %s's token is High!\n", targetname);
-        else //Otherwise token must still be System.
+        else if (dwIntegrityLevel == SECURITY_MANDATORY_SYSTEM_RID)
             BeaconPrintf(CALLBACK_ERROR, "%s's token is SYSTEM! IT IS STILL ACTIVE!\n", targetname);
+        else //Otherwise token is medium plus.
+            BeaconPrintf(CALLBACK_OUTPUT, "[*] %s's token is Medium_Plus!\n", targetname);
     }
 
     //Drop system privileges

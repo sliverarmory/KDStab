@@ -1,0 +1,27 @@
+{
+    "name": "kdstab-kill-defender",
+    "version": "0.0.0",
+    "command_name": "kdstab-kill-defender",
+    "extension_author": "c2biz",
+    "original_author": "Octoberfest7",
+    "repo_url": "https://github.com/sliverarmory/KDStab",
+    "help": "BOF combination of KillDefender and Backstab",
+    "long_help": "",
+    "depends_on": "coff-loader",
+    "entrypoint": "go",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "KillDefender.x64.o"
+        }
+    ],
+    "arguments": [
+        {
+            "name": "pid",
+            "desc": "PID of a process started by the target user",
+            "type": "int",
+            "optional": false
+        }
+    ]
+}
